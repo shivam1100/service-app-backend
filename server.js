@@ -8,8 +8,9 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Service Provider Backend Running ✅");
+  res.json({ message: "Service Provider Backend Running ✅" });
 });
+
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected ✅"))
